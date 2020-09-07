@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link rel="stylesheet" href="styes.css">
+  <style>
+    div{
+      padding:5px;
+      text-align:center;
+      font-size:50
+      
+      
+    }
+    body{
+      background: url('https://www.altcoinbuzz.io/wp-content/uploads/2018/06/Stanford-University-Plans-To-Open-A-Blockchain-Research-Center.png')
+    }
+    h1{
+      color:red
+    }
+    input{
+      background-color:cyan;
+      font-size:20px;
+      border-radius:10px;
+      border-width:3px
+    }
+    button{
+      background-color:lime;
+        font-size:20px;
+      border-radius:10px
+    }
+    h2{
+      color:red
+  </style>
+  
+</head>
+
+<body>
+  
+ <div class="login">
+   <h1><i>Predict the graduate admission</i></h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    
+    	<form action="{{url_for('predict')}}"method="post">
+          <div>
+<input type="text" name="GRE Score" placeholder="enter your gre score" required="required" /><br>
+          </div>
+          <div>
+<input type="text" name="TOEFL Score" placeholder="enter your TOEFL score" required="required" /><br>
+          </div>
+          <div>
+<input type="text" name="University Rating" placeholder=" University Rating out of 5" required="required" /><br>
+          </div>
+          <div>
+<input type="text" name="CGPA" placeholder="enter your cgpa" required="required" /><br>
+          </div>
+              <div>
+<input type="text" name="SOP" placeholder=" sop score out of 5" required="required" /><br>
+          </div>
+              <div>
+<input type="text" name="LOR" placeholder=" lor score out of 5" required="required" /><br>
+          </div>
+<footer>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+          </footer>
+  </form>
+
+   <br>
+   <br>
+   <h2>
+   {{ prediction_text }}
+   {{pre}}
+   </h2>
+
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link rel="stylesheet" href="styes.css">
+  
+</head>
+
+<body>
+  
+ <div class="login">
+   <h1>Predict the graduate admission</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    
+    	<form action="{{url_for('predict')}}"method="post">
+          <div>
+<input type="text" name="GRE Score" placeholder="enter your gre score" required="required" /><br>
+          </div>
+          <div>
+<input type="text" name="TOEFL Score" placeholder="enter your TOEFL score" required="required" /><br>
+          </div>
+          <div>
+<input type="text" name="University Rating" placeholder=" University Rating" required="required" /><br>
+          </div>
+          <div>
+<input type="text" name="CGPA" placeholder="enter your cgpa" required="required" /><br>
+          </div>
+<footer>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+          </footer>
+  </form>
+
+   <br>
+   <br>
+   <h3>
+   {{ prediction_text }}
+   </h3>
+
+
+</body>
+</html>
